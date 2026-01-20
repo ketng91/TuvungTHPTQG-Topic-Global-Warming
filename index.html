@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ vựng Topic: Global Warming- Lớp Anh thầy Kết</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+ header {
+  background-color: #ffd6ba;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #7a4e3e;
+  display: flex;
+  flex-wrap: wrap;       
+  align-items: center;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
+  gap: 15px;
+}
+
+/* Left: icon + home text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;          /* không bị co lại */
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #7a4e3e;
+  text-decoration: none;
+}
+
+.header-left a i {
+  font-size: 28px;
+}
+
+/* Center title */
+header {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* ===== TOP SELECT ===== */
+.top-select {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #a0e7e5;
+  background-color: #e3fdfd;
+}
+
+
+
+/* MEDIA QUERY cho điện thoại */
+@media (max-width: 480px) {
+
+    .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+  .top-select {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 40px;
+  }
+
+  select {
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #a0e7e5;
+    background-color: #e3fdfd;
+  }
+
+  /* Word list */
+  .word-list {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #E0FBE2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 22px;
+  }
+
+.word-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #ffb3ba;
+  transition: background-color .15s ease-in-out;
+}
+.word-row:last-child { border-bottom: none; }
+
+/* Hover đổi màu */
+.word-row:hover {
+  background-color: #fffacd; /* xanh nhạt dễ thấy */
+  cursor: pointer;
+}
+
+  /* Ôn tập */
+  .review-box {
+    margin: 40px auto;
+    width: 70%;
+    background-color: #ffe5ec;
+    padding: 25px;
+    font-weight: bold;
+    color: #607274;
+    font-size: 26px;
+    border-radius: 12px;
+  }
+  .review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.review-buttons button {
+  background-color: #a0e7e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background-color: #ffb3ba;
+}
+
+
+  /* Bài tập */
+  .exercise {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .exercise input {
+    width: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+
+  .exercise button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 18px;
+    background-color: #a0e7e5;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .exercise button:hover {
+    background-color: #ffb3ba;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #C5705D;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  footer {
+    font-size: 22px;
+    margin-top: 40px;
+    padding: 20px;
+    color: #7a4e3e;
+    background-color: #fff0e1;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: .9;
+    animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
+    100% {transform: translate(var(--x),var(--y)) scale(.5);opacity:0;}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="https://ketng91.github.io/TuvungTHPTQ-homepage/">
+      <i class="fa-solid fa-house"></i> Lớp Anh thầy Kết
+    </a>
+  </div>
+  <div class="header-center">
+    Từ vựng Topic: Global Warming
+  </div>
+</header>
+
+<!-- Bộ chọn -->
+<div class="top-select">
+  <select id="wordList">
+    <option value="1">Từ vựng Topic: Global Warming</option>
+
+
+  </select>
+</div>
+
+
+
+<script>
+// Bắt sự kiện Enter cho tất cả các ô input trong bài tập
+document.addEventListener("DOMContentLoaded", function() {
+  const exerciseInputs = document.querySelectorAll(".exercise input");
+
+  exerciseInputs.forEach(input => {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {      // Kiểm tra nếu nhấn Enter
+        e.preventDefault();          // Ngăn việc xuống dòng mặc định
+        const checkBtn = this.nextElementSibling; // giả định nút Check ngay sau input
+        if (checkBtn && checkBtn.tagName === "BUTTON") {
+          checkBtn.click();         // kích hoạt nút Check
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- Danh sách từ vựng -->
+<div class="word-list" id="wordContainer"></div>
+
+<!-- Ôn tập -->
+<div class="review-box">
+  <div id="vietWord">Chọn Bộ từ vựng để bắt đầu</div>
+    
+  <!-- Hiển thị đáp án -->
+<div id="answer" style="font-size:22px;color:#7a4e3e; margin-top:15px; text-align:center; min-height:40px;"></div>
+   
+  <!-- Nút bấm -->
+  <div class="review-buttons" style="margin-top:20px;">
+    <button onclick="know()">Đã biết</button>
+    <button onclick="dontKnow()">Chưa biết</button>
+    <button onclick="nextWord()">Tiếp theo</button>
+  </div>
+
+</div>
+
+<!-- Bài tập -->
+<div class="exercise" id="exercise"></div>
+
+<footer>Chúc mừng bạn đã hoàn thành bài học!</footer>
+<script>
+const selectEl = document.getElementById("wordList");
+
+function sortOptionsByNumber() {
+  const opts = Array.from(selectEl.options);
+
+  opts.sort((a, b) => {
+    return Number(a.value) - Number(b.value);
+  });
+
+  selectEl.innerHTML = "";
+  opts.forEach(o => selectEl.appendChild(o));
+}
+
+// sort ngay khi load
+sortOptionsByNumber();
+
+// sort lại khi mở dropdown
+selectEl.addEventListener("mousedown", sortOptionsByNumber);
+selectEl.addEventListener("touchstart", sortOptionsByNumber);
+</script>
+
+<script>
+/********** DATA **********/
+const data = {
+  1: [
+  { en: "anthropogenic /ˌænθrəpəˈdʒɛnɪk/", vn: "do con người gây ra (tác động của con người)", tick: false },
+  { en: "industrial emissions /ɪnˈdʌstriəl iˈmɪʃənz/", vn: "khí thải công nghiệp", tick: false },
+  { en: "deforestation /diˌfɔːrəˈsteɪʃən/", vn: "sự phá rừng", tick: false },
+  { en: "methane emissions /ˈmɛθeɪn iˈmɪʃənz/", vn: "phát thải khí mê-tan", tick: false },
+  { en: "livestock farming /ˈlaɪvstɑːk ˈfɑːrmɪŋ/", vn: "chăn nuôi gia súc (nguồn phát thải lớn)", tick: false },
+  { en: "vehicular emissions /viˈhɪkjələr iˈmɪʃənz/", vn: "khí thải từ phương tiện giao thông", tick: false },
+  { en: "aerosol particles /ˈɛrəsɔːl ˈpɑːrtɪkəlz/", vn: "hạt khí dung / hạt aerosol", tick: false },
+  { en: "albedo effect /ælˈbiːdoʊ ɪˈfɛkt/", vn: "hiệu ứng phản xạ ánh sáng (của bề mặt trái đất)", tick: false },
+  { en: "melting ice caps /ˈmɛltɪŋ aɪs kæps/", vn: "sự tan chảy băng ở các cực", tick: false },
+  { en: "polar ice melt /ˈpoʊlər aɪs mɛlt/", vn: "tan băng vùng cực", tick: false },
+  { en: "sea level rise /si ˈlɛvəl raɪz/", vn: "mực nước biển dâng cao", tick: false },
+  { en: "ocean acidification /ˈoʊʃən əˌsɪdəfɪˈkeɪʃən/", vn: "sự axit hóa đại dương", tick: false },
+  { en: "coral bleaching /ˈkɔːrəl ˈblitʃɪŋ/", vn: "hiện tượng tẩy trắng san hô", tick: false },
+  { en: "permafrost thaw /ˈpɜːrməfrɔːst θɔː/", vn: "sự tan chảy tầng đóng băng vĩnh cửu", tick: false },
+  { en: "feedback loop /ˈfidbæk lup/", vn: "vòng phản hồi (hệ quả này thúc đẩy nguyên nhân kia)", tick: false },
+  { en: "tipping point /ˈtɪpɪŋ pɔɪnt/", vn: "điểm tới hạn (trạng thái không thể cứu vãn)", tick: false },
+  { en: "mitigation /ˌmɪtɪˈɡeɪʃən/", vn: "giảm thiểu (tác động/nguyên nhân)", tick: false },
+  { en: "adaptation /ˌædæpˈteɪʃən/", vn: "thích ứng (với biến đổi khí hậu)", tick: false },
+  { en: "carbon sequestration /ˈkɑːrbən ˌsikwɛˈstreɪʃən/", vn: "sự cô lập / hấp thụ carbon", tick: false },
+  { en: "reforestation /ˌrifɔːrəˈsteɪʃən/", vn: "sự tái trồng rừng", tick: false },
+  { en: "afforestation /əˌfɔːrəˈsteɪʃən/", vn: "sự gây bồi rừng (trồng trên diện tích mới)", tick: false },
+  { en: "carbon capture /ˈkɑːrbən ˈkæptʃər/", vn: "thu giữ carbon", tick: false },
+  { en: "geoengineering /ˌdʒioʊˌɛndʒɪˈnɪrɪŋ/", vn: "kỹ thuật địa cầu (can thiệp khí hậu quy mô lớn)", tick: false },
+  { en: "net-zero emissions /nɛt ˈzɪroʊ iˈmɪʃənz/", vn: "phát thải ròng bằng không", tick: false },
+  { en: "Paris Agreement /ˈpærɪs əˈɡrimənt/", vn: "Thỏa thuận Paris về khí hậu", tick: false },
+  { en: "climate summit /ˈklaɪmət ˈsʌmɪt/", vn: "hội nghị thượng đỉnh về khí hậu", tick: false },
+  { en: "emission targets /iˈmɪʃən ˈtɑːrɡɪts/", vn: "mục tiêu giảm phát thải", tick: false },
+  { en: "carbon pricing /ˈkɑːrbən ˈpraɪsɪŋ/", vn: "định giá carbon (thuế/hạn ngạch)", tick: false },
+  { en: "climate policy /ˈklaɪmət ˈpɑːləsi/", vn: "chính sách khí hậu", tick: false },
+  { en: "international cooperation /ˌɪntərˈnæʃənəl koʊˌɑːpəˈreɪʃən/", vn: "hợp tác quốc tế", tick: false },
+  { en: "climate denial /ˈklaɪmət dɪˈnaɪəl/", vn: "sự phủ nhận biến đổi khí hậu", tick: false },
+  { en: "climate activist /ˈklaɪmət ˈæktɪvɪst/", vn: "nhà hoạt động vì khí hậu", tick: false },
+  { en: "food insecurity /fud ˌɪnsɪˈkjʊrəti/", vn: "mất an ninh lương thực", tick: false },
+  { en: "climate migration /ˈklaɪmət maɪˈɡreɪʃən/", vn: "di cư do biến đổi khí hậu", tick: false },
+  { en: "economic disruption /ˌɛkəˈnɑːmɪk dɪsˈrʌpʃən/", vn: "sự gián đoạn kinh tế", tick: false },
+  { en: "health hazards /hɛlθ ˈhæzərdz/", vn: "các mối nguy hại cho sức khỏe", tick: false },
+  { en: "crop failure /krɑːp ˈfeɪljər/", vn: "mất mùa / thất thu mùa màng", tick: false },
+  { en: "water stress /ˈwɔːtər strɛs/", vn: "tình trạng thiếu hụt nguồn nước", tick: false },
+  { en: "a drop in the ocean", vn: "muối bỏ bể / quá nhỏ bé so với vấn đề", tick: false },
+  { en: "put our heads in the sand", vn: "trốn tránh thực tại / phớt lờ cảnh báo", tick: false },
+  { en: "face the music", vn: "đối mặt với hậu quả", tick: false },
+  { en: "turn the tide", vn: "xoay chuyển tình thế", tick: false },
+  { en: "fight an uphill battle", vn: "chiến đấu cực kỳ khó khăn", tick: false },
+  { en: "sound the alarm", vn: "gióng lên hồi chuông cảnh báo", tick: false },
+  { en: "wipe out", vn: "xóa sổ / tàn phá hoàn toàn", tick: false },
+  { en: "race against time", vn: "chạy đua với thời gian", tick: false }
+  ],
+
+};
+
+const exercises = {
+  1: [
+    {q:"The company launched a massive ________ to promote its new phone.", a:"advertising campaign"},
+    {q:"Most social media platforms rely heavily on ________ to operate.", a:"advertising revenue"},
+    {q:"Modern societies are often driven by a culture of ________.", a:"consumerism"},
+    {q:"Many online shoppers fall into the trap of ________ during big sales.", a:"impulse buying"},
+    {q:"Brands use ________ to create trust.", a:"celebrity endorsement"},
+    {q:"Athletes are paid large sums to ________ a product.", a:"endorse"}
+  ],
+  2: [
+    {q:"Famous athletes can boost sales through product ________.", a:"endorsement"},
+{q:"Companies must protect their ________ by maintaining consistent quality.", a:"brand equity"},
+{q:"A singer with strong ________ can attract millions of new customers.", a:"celebrity appeal"},
+{q:"Brands aim to build long-term ________ among returning customers.", a:"brand loyalty"},
+{q:"A poorly handled ________ may damage both the celebrity and the brand.", a:"celebrity scandal"},
+  ],
+
+
+
+
+
+};
+
+let currList = 1, listCopy=[], index=0;
+
+/********** LOAD LIST **********/
+function loadList(){
+  currList = document.getElementById("wordList").value;
+  listCopy = [...data[currList]];
+  renderWords();
+  index=-1;
+  nextWord();
+  loadExercises();
+}
+
+document.getElementById("wordList").onchange = loadList;
+loadList();
+
+/********** RENDER & SORT **********/
+function renderWords(){
+  const box=document.getElementById("wordContainer");
+  box.innerHTML="";
+
+  let sorted=[...data[currList]].sort((a,b)=>b.tick - a.tick);
+
+  sorted.forEach(item=>{
+    let realIndex = data[currList].indexOf(item);
+    box.innerHTML+=`
+      <div class="word-row">
+        <span>${item.en}: ${item.vn}</span>
+        <input type="checkbox" ${item.tick?"checked":""} onclick="toggleTick(${realIndex})">
+      </div>`;
+  });
+}
+
+/********** TICK UPDATE **********/
+function toggleTick(realIndex){
+  data[currList][realIndex].tick = !data[currList][realIndex].tick;
+  renderWords();
+}
+
+/********** REVIEW **********/
+function nextWord(){
+  document.getElementById("answer").innerHTML="";
+  if(listCopy.length===0){
+    document.getElementById("vietWord").innerHTML="🎉 Bạn đã học xong hết!";
+    return;
+  }
+  index=Math.floor(Math.random()*listCopy.length);
+  document.getElementById("vietWord").innerHTML=listCopy[index].vn;
+}
+
+function know(){
+  firework();
+  listCopy.splice(index,1);
+  nextWord();
+}
+
+function dontKnow(){
+  document.getElementById("answer").innerHTML=listCopy[index].en;
+}
+
+/********** EXERCISES **********/
+function loadExercises(){
+  const box=document.getElementById("exercise");
+  box.innerHTML="";
+  exercises[currList].forEach((item,i)=>{
+    box.innerHTML+=`
+    <div style="margin:10px 0;">
+      ${i+1}. ${item.q}
+      <input id="ex${i}">
+      <button onclick="checkEx(${i})">Check</button>
+      <span id="res${i}" class="result"></span>
+    </div>`;
+  });
+}
+
+function checkEx(i){
+  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
+  const ans = exercises[currList][i].a.toLowerCase();
+  const box = document.getElementById("res"+i);
+
+  if(user === ans) {
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745"; // chữ Correct màu xanh lá
+    firework(); // gọi pháo hoa
+  } else {
+    box.innerHTML = "✘ " + exercises[currList][i].a;
+    box.style.color = "#C5705D"; // chữ sai màu đỏ
+  }
+}
+
+/********** FIREWORK **********/
+function firework(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()-.5)*600+"px");
+    c.style.setProperty("--y",(Math.random()-.5)*600+"px");
+    c.style.backgroundColor=`hsl(${Math.random()*360},90%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),900);
+  }
+}
+</script>
+
+</body>
+</html>
